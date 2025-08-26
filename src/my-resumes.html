@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Resumes — Resume Enhancer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand"><h1>Resume Enhancer</h1></div>
+        <nav class="nav-actions nav-main">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="create.html" class="nav-link">Create</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="my-resumes.html" class="nav-link active">My Resumes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-grid">
+      <section class="panel">
+        <h3>My Resumes</h3>
+        <div id="my-resumes-list"></div>
+      </section>
+
+      <aside class="panel preview-panel">
+        <div class="preview-toolbar"><span class="hint">Preview</span></div>
+        <div id="resume-preview" class="resume-canvas animated"></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Made with ❤️ — All client-side</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered Resume Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="dark">
+    <div class="bg-animation" aria-hidden="true">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <span class="blob b4"></span>
+    </div>
+    <div class="type-overlay" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <h1>Resume Enhancer</h1>
+        </div>
+        <nav class="nav-actions nav-main">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="create.html" class="nav-link">Create</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="my-resumes.html" class="nav-link">My Resumes</a>
+          <a href="#" class="btn subtle">Docs</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-grid">
+      <section class="hero">
+        <h2>Create a beautiful resume — instantly</h2>
+        <p class="lead">Upload info or use the form. Choose a template, tweak styling, and export to PDF — all in your browser.</p>
+        <div class="hero-cta">
+          <label class="file-cta">
+            <input type="file" id="upload-json" accept="application/json">
+            <span>Upload JSON</span>
+          </label>
+          <a href="#form" class="btn">Start now</a>
+        </div>
+      </section>
+
+      <section id="form" class="panel form-panel">
+        <h3>Enter your information</h3>
+        <form id="resume-form" class="resume-form">
+          <div class="row">
+            <label>Full name<input type="text" name="name" required></label>
+            <label>Email<input type="email" name="email" required></label>
+          </div>
+          <div class="row">
+            <label>Phone<input type="text" name="phone" required></label>
+            <label>Location<input type="text" name="location"></label>
+          </div>
+          <label>Summary<textarea name="summary" rows="3" required></textarea></label>
+          <label>Experience<textarea name="experience" rows="5" required placeholder="Company — Role — Years\nDescribe your accomplishments"></textarea></label>
+          <label>Education<textarea name="education" rows="3" required></textarea></label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Generate Resume</button>
+            <button type="button" id="clear-btn" class="btn subtle">Clear</button>
+          </div>
+        </form>
+
+        <div class="templates">
+          <h4>Templates</h4>
+          <div class="template-grid" id="template-grid">
+            <button class="template-thumb active" data-template="modern">Modern</button>
+            <button class="template-thumb" data-template="classic">Classic</button>
+            <button class="template-thumb" data-template="creative">Creative</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="panel about-panel">
+        <h3>About</h3>
+        <div id="profile-area">
+          <div id="profile-card" class="profile-card">
+            <div class="pc-header">
+              <div class="pc-name" id="pc-name">Guest</div>
+              <div class="pc-actions">
+                <button id="open-auth" class="btn subtle">Log in / Sign up</button>
+              </div>
+            </div>
+            <div class="pc-body">
+              <p id="pc-bio">Sign in to save your profile and resumes locally.</p>
+            </div>
+            <div class="pc-footer">
+              <label class="api-label">Pexels API Key (paste here to enable image search)</label>
+              <input id="pexels-key" placeholder="Paste Pexels API key here" />
+              <div class="api-actions"><button id="pexels-search" class="btn">Search Stock</button></div>
+              <div id="pexels-results" class="pexels-grid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel preview-panel">
+        <div class="preview-toolbar">
+          <span class="hint">Preview</span>
+          <button id="export-pdf" class="btn primary" style="display:none;">Export as PDF</button>
+        </div>
+        <div id="resume-preview" class="resume-canvas animated"></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Made with ❤️ — All client-side</div>
+    </footer>
+
+  <div class="auth-modal" id="auth-modal" aria-hidden="true">
+      <div class="auth-box">
+        <h4>Sign in / Sign up</h4>
+        <label>Email</label>
+        <input id="auth-email" type="email" />
+        <label>Name</label>
+        <input id="auth-name" type="text" />
+        <div class="auth-actions">
+          <button id="auth-save" class="btn primary">Save</button>
+          <button id="auth-cancel" class="btn subtle">Cancel</button>
+        </div>
+      </div>
+    </div>
+  <!-- script placed after modal and all DOM so handlers attach reliably -->
+  <script src="script.js"></script>
+  </body>
+</html>

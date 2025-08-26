@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create — Resume Enhancer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand"><h1>Resume Enhancer</h1></div>
+        <nav class="nav-actions nav-main">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="create.html" class="nav-link active">Create</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="my-resumes.html" class="nav-link">My Resumes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-grid">
+      <section id="form" class="panel form-panel">
+        <h3>Enter your information</h3>
+        <form id="resume-form" class="resume-form">
+          <div class="row">
+            <label>Full name<input type="text" name="name" required></label>
+            <label>Email<input type="email" name="email" required></label>
+          </div>
+          <div class="row">
+            <label>Phone<input type="text" name="phone" required></label>
+            <label>Location<input type="text" name="location"></label>
+          </div>
+          <label>Summary<textarea name="summary" rows="3" required></textarea></label>
+          <label>Experience<textarea name="experience" rows="5" required placeholder="Company — Role — Years\nDescribe your accomplishments"></textarea></label>
+          <label>Education<textarea name="education" rows="3" required></textarea></label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Generate Resume</button>
+            <button type="button" id="clear-btn" class="btn subtle">Clear</button>
+          </div>
+        </form>
+
+        <div class="templates">
+          <h4>Templates</h4>
+          <div class="template-grid" id="template-grid">
+            <button class="template-thumb active" data-template="modern">Modern</button>
+            <button class="template-thumb" data-template="classic">Classic</button>
+            <button class="template-thumb" data-template="creative">Creative</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel preview-panel">
+        <div class="preview-toolbar">
+          <span class="hint">Preview</span>
+          <button id="export-pdf" class="btn primary" style="display:none;">Export as PDF</button>
+        </div>
+        <div id="resume-preview" class="resume-canvas animated"></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Made with ❤️ — All client-side</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
